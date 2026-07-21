@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal — Courses (JS)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="site-name">Student Portal</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#grades">Grades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="courses">
+      <h2>Enrolled Courses</h2>
+
+      <div class="controls">
+        <input type="text" id="search-courses" placeholder="Search courses...">
+        <button id="sort-credits">Sort by Credits</button>
+      </div>
+
+      <div class="course-grid"></div>
+
+      <p id="total-credits"></p>
+      <div id="selected-course"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

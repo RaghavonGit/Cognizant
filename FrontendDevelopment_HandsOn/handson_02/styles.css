@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+}
+
+/* ---------- Header / Nav (Flexbox) — mobile-first ---------- */
+header {
+  padding: 1rem 1.5rem;
+  background-color: #1e293b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.site-name {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: bold;
+}
+
+.nav-placeholder {
+  cursor: pointer;
+}
+
+header nav {
+  display: none;
+  width: 100%;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Hero (Flexbox column) ---------- */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  min-height: 40vh;
+  justify-content: center;
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+#hero h1 {
+  margin-bottom: 0.75rem;
+}
+
+#hero p {
+  margin-bottom: 1.5rem;
+}
+
+#hero button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#hero button:hover {
+  background-color: #ffffff;
+  color: #2563eb;
+}
+
+/* ---------- Stats bar (Flexbox) ---------- */
+#stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.stat-item {
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+/* ---------- Courses (CSS Grid) — mobile-first: single column ---------- */
+#courses {
+  padding: 2rem 1.5rem;
+}
+
+#courses h2 {
+  margin-bottom: 1.5rem;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.course-card {
+  min-height: 160px;
+  padding: 1.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  align-self: stretch;
+}
+
+.course-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.course-card span {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+/* ---------- Tablet: 768px+ ---------- */
+@media (min-width: 768px) {
+  .nav-placeholder {
+    display: none;
+  }
+
+  header nav {
+    display: block;
+    width: auto;
+  }
+
+  header nav ul {
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Desktop: 1024px+ ---------- */
+@media (min-width: 1024px) {
+  #hero {
+    padding: 4rem 2rem;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,18 @@
+Browser console output on page load (Task 1: ES6+ syntax practice)
+
+Data Structures: 4 credits
+Web Development: 3 credits
+Database Systems: 4 credits
+Operating Systems: 4 credits
+Computer Networks: 3 credits
+Formatted courses: [
+  'CS101 — Data Structures (4 credits)',
+  'CS102 — Web Development (3 credits)',
+  'CS103 — Database Systems (4 credits)',
+  'CS104 — Operating Systems (4 credits)',
+  'CS105 — Computer Networks (3 credits)'
+]
+High-credit course count: 3
+Total credits enrolled: 18
+
+Expected Outcome (Task 1): CONFIRMED — formatted strings, filtered count (3), and total credits (18) all logged correctly.

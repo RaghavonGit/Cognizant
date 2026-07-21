@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal — Courses (JS)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!--
+  Accessibility audit log (Hands-On 9, Task 1)
+  Lighthouse baseline (before manual review): 100/100 automated accessibility score.
+  Automated tools cannot catch every issue (e.g. placeholder-as-label is accepted by
+  axe's accessible-name algorithm, but WCAG 1.3.1 still recommends a real <label>).
+  Manual fixes applied below regardless of the automated pass:
+    1. Added a proper page <h1> — page previously started at <h2> (fixed heading hierarchy).
+    2. Added a visually-hidden <label> for the search input, in addition to its placeholder.
+    3. Added a decorative icon (alt="") and a meaningful icon (real alt text) to demonstrate
+       both cases of the alt-text rule.
+    4. Added aria-label="Main navigation" and aria-current="page" to the nav.
+    5. Course cards get tabindex="0" + Enter-key handling for keyboard access (see app.js).
+    6. Results count uses role="status" aria-live="polite" so screen readers announce updates.
+    7. Added an aria-expanded mobile-menu toggle to demonstrate the expandable-element pattern.
+-->
+<body>
+  <header>
+    <div class="site-name">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTIgM0wxIDlsMTEgNiAxMS02LTExLTZ6TTEgMTV2Nmw1LTIuNVYxNy41TDEgMTV6bTYgMy41VjIwbDUgMi41IDUtMi41di0xLjVsLTUgMi41LTUtMi41eiIvPjwvc3ZnPg==" alt="" width="20" height="20" />
+      Student Portal
+    </div>
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      ☰ Menu
+    </button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses" aria-current="page">Courses</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#grades">Grades</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="visually-hidden">Student Portal — Course Catalogue</h1>
+
+    <section id="courses">
+      <h2>Enrolled Courses</h2>
+
+      <div class="controls">
+        <label for="search-courses" class="visually-hidden">Search courses</label>
+        <input type="text" id="search-courses" placeholder="Search courses...">
+        <button id="sort-credits">Sort by Credits</button>
+      </div>
+
+      <p id="results-count" role="status" aria-live="polite" class="visually-hidden"></p>
+
+      <div class="course-grid"></div>
+
+      <p id="total-credits"></p>
+      <div id="selected-course" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

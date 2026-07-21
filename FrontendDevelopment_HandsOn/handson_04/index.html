@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal — Async JS &amp; API Integration</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="site-name">Student Portal</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+        <li><a href="#axios-demo">Axios Demo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="courses">
+      <h2>Enrolled Courses</h2>
+      <p id="courses-status" class="status-msg"></p>
+      <div class="course-grid"></div>
+    </section>
+
+    <section id="notifications">
+      <h2>Notifications</h2>
+      <p id="notif-status" class="status-msg"></p>
+      <button id="load-bad-url" class="secondary-btn">Simulate 404 Error</button>
+      <button id="retry-btn" class="secondary-btn hidden">Retry</button>
+      <div class="notif-grid"></div>
+    </section>
+
+    <section id="axios-demo">
+      <h2>Axios Demo — User 1's Posts</h2>
+      <p id="axios-status" class="status-msg"></p>
+      <div class="notif-grid" id="axios-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

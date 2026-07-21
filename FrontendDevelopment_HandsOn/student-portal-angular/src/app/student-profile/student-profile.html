@@ -1,0 +1,35 @@
+<section class="profile-form">
+  <h2>Student Profile</h2>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>
+      Name
+      <input type="text" formControlName="name" />
+    </label>
+    @if (profileForm.controls.name.touched && profileForm.controls.name.invalid) {
+      <p class="field-error">Name is required</p>
+    }
+
+    <label>
+      Email
+      <input type="email" formControlName="email" />
+    </label>
+    @if (profileForm.controls.email.touched && profileForm.controls.email.invalid) {
+      <p class="field-error">Enter a valid email</p>
+    }
+
+    <label>
+      Semester
+      <input type="number" formControlName="semester" />
+    </label>
+    @if (profileForm.controls.semester.touched && profileForm.controls.semester.invalid) {
+      <p class="field-error">Semester must be between 1 and 8</p>
+    }
+
+    <button type="submit" [disabled]="profileForm.invalid">Submit</button>
+  </form>
+
+  @if (submitted && profileForm.valid) {
+    <p class="status-msg">Profile saved: {{ profileForm.value | json }}</p>
+  }
+</section>

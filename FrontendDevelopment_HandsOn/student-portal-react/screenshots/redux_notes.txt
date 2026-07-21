@@ -1,0 +1,18 @@
+Hands-On 6, Task 3 — Redux Toolkit refactor
+
+store.js uses configureStore({ reducer: { enrollment: enrollmentReducer } }).
+configureStore wires up redux-devtools-extension automatically when the Redux
+DevTools browser extension is installed (dev builds only) — no extra config needed.
+
+Verified programmatically (headless browser has no devtools extension UI):
+- Enrolling course id=1 -> state.enrollment.enrolledCourses = [course1]   (action: enrollment/enroll)
+- Enrolling course id=2 -> state.enrollment.enrolledCourses = [course1, course2] (action: enrollment/enroll)
+- Header's "Enrolled: N" badge and ProfilePage's course list both read the same
+  slice via useSelector(state => state.enrollment.enrolledCourses) — updating
+  together confirms a single source of truth, matching the Context-based
+  behaviour from Task 2 but now backed by Redux.
+
+To inspect interactively: run `npm run dev` in student-portal-react/, open
+Chrome DevTools -> Redux tab (with the Redux DevTools extension installed),
+enroll/remove courses, and watch the "enrollment/enroll" and
+"enrollment/unenroll" actions appear with their payload + state diff.

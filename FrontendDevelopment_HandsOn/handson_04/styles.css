@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+}
+
+header {
+  padding: 1rem 1.5rem;
+  background-color: #1e293b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.site-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+main section {
+  padding: 2rem 1.5rem;
+}
+
+main section h2 {
+  margin-bottom: 1rem;
+}
+
+.status-msg {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.status-msg.error {
+  color: #dc2626;
+}
+
+.course-grid,
+.notif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.course-card,
+.notif-card {
+  padding: 1.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+}
+
+.course-card h3,
+.notif-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.course-card p,
+.notif-card p {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.course-card span {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.secondary-btn {
+  padding: 0.6rem 1.2rem;
+  margin-right: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #dc2626;
+  color: #ffffff;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background-color: #b91c1c;
+}
+
+.secondary-btn.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 4px solid #d1d5db;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1e293b;
+  color: #ffffff;
+}

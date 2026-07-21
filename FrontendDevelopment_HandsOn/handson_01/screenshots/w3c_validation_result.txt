@@ -1,0 +1,10 @@
+W3C Nu Html Checker (https://validator.w3.org/nu/) — validation of index.html
+Validator engine version: 26.7.16
+Request: POST https://validator.w3.org/nu/?out=json  (Content-Type: text/html; charset=utf-8)
+
+Result:
+{"version":"26.7.16","messages":[]}
+
+messages: []  ->  ZERO errors, ZERO warnings.
+
+Expected Outcome (Task 1): "W3C validator reports zero errors." — CONFIRMED.

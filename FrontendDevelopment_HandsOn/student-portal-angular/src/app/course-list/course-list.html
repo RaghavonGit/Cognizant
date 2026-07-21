@@ -1,0 +1,30 @@
+<section id="courses">
+  <h2>Course Catalogue</h2>
+
+  <input
+    type="text"
+    class="search-input"
+    placeholder="Search courses..."
+    [ngModel]="searchTerm()"
+    (ngModelChange)="onSearchInput($event)"
+  />
+
+  @if (loading()) {
+    <p class="status-msg"><span class="spinner"></span> Loading courses...</p>
+  }
+
+  @if (!loading() && filteredCourses().length === 0) {
+    <p class="status-msg">No courses found</p>
+  }
+
+  <div class="course-grid">
+    @for (course of filteredCourses(); track course.id) {
+      <app-course-card
+        [name]="course.name"
+        [code]="course.code"
+        [credits]="course.credits"
+        [grade]="course.grade ?? ''"
+      ></app-course-card>
+    }
+  </div>
+</section>

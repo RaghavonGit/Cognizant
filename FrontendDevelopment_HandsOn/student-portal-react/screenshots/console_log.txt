@@ -1,0 +1,7 @@
+[vite] connecting...
+[vite] connected.
+%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Courses updated
+Courses updated
+Courses updated
+Courses updated
