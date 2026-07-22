@@ -1,0 +1,10 @@
+[project]
+name = "selenium-basics"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "pytest>=9.1.1",
+    "pytest-html>=4.2.0",
+    "selenium>=4.46.0",
+    "webdriver-manager>=4.1.2",
+]
